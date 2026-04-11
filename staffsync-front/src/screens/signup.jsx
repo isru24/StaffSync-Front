@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import firstImage from "../assets/first.jpg"
 function Signup(params) {
     const [formData, setFormData] = useState({
@@ -42,7 +42,7 @@ function Signup(params) {
 
 
     return (
-        <div style={{ display: "flex", height: "95vh", }}>
+        <div style={{ display: "flex", height: "95vh",}}>
             <div style={{ width: "50%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <form onSubmit={handleSubmit}>
                     <div style={{ paddingLeft: "30%", paddingBottom: "20px" }}>Create Company Account</div>
@@ -109,9 +109,12 @@ function Signup(params) {
                     <button style={buttonStyle}>
                         Signup
                     </button>
-                    <text style={{ margin:"20px",}}>
-                        Already have an Account? Login
-                    </text>
+                    <p style={{ margin:"20px",}}>
+                        Already have an Account? {" "}
+                        <Link to="/Login" style={{color:"blue"}}>
+                        Login
+                        </Link>
+                    </p>
                 </form>
             </div>
             <div style={{ width: "50%", backgroundImage: `url(${firstImage})`, backgroundSize: "cover", borderRadius: "10px" }}></div>
