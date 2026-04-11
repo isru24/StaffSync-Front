@@ -6,6 +6,8 @@ function Signup(params) {
         name: "",
         email: "",
         country: "",
+        AdminName:"",
+        AdminEmail:"",
         password: ""
     })
     const [message, setMessage] = useState("");
@@ -43,10 +45,10 @@ function Signup(params) {
         <div style={{ display: "flex", height: "95vh", }}>
             <div style={{ width: "50%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <form onSubmit={handleSubmit}>
-                    <div style={{paddingLeft:"30%",paddingBottom:"20px"}}>Create Account</div>
+                    <div style={{ paddingLeft: "30%", paddingBottom: "20px" }}>Create Company Account</div>
                     <div>
                         <label>
-                            CompanyName
+                            Company Name
                         </label>
                         <input type="text"
                             name="name"
@@ -58,11 +60,11 @@ function Signup(params) {
                     </div>
                     <div>
                         <label>
-                            CompanyEmail
+                            Company Email
                         </label>
                         <input type="email"
-                            name="name"
-                            value={formData.name}
+                            name="email"
+                            value={formData.email}
                             onChange={handleChange}
                             required
                             style={inputStyle}
@@ -70,16 +72,46 @@ function Signup(params) {
                     </div>
                     <div>
                         <label>
-                            Country
+                            Admin Name
                         </label>
                         <input type="text"
                             name="name"
-                            value={formData.name}
+                            value={formData.AdminName}
                             onChange={handleChange}
                             required
                             style={inputStyle}
                         />
                     </div>
+                    <div>
+                        <label>
+                            Admin Email
+                        </label>
+                        <input type="text"
+                            name="name"
+                            value={formData.AdminEmail}
+                            onChange={handleChange}
+                            required
+                            style={inputStyle}
+                        />
+                    </div>
+                    <div>
+                        <label>
+                            Password
+                        </label>
+                        <input type="text"
+                            name="name"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                            style={inputStyle}
+                        />
+                    </div>
+                    <button style={buttonStyle}>
+                        Signup
+                    </button>
+                    <text style={{ margin:"20px",}}>
+                        Already have an Account? Login
+                    </text>
                 </form>
             </div>
             <div style={{ width: "50%", backgroundImage: `url(${firstImage})`, backgroundSize: "cover", borderRadius: "10px" }}></div>
@@ -94,6 +126,16 @@ const inputStyle = {
     marginLeft: "0.1rem",
     border: "1px solid #ccc",
     borderRadius: "10px",
+}
+
+const buttonStyle = {
+    padding:"10px",
+    backgroundColor:"#ffffff",
+    border:"1px solid ",
+    borderRadius:"8px",
+    display:"flex",
+    marginLeft:"6.7rem",
+    marginBottom:"0.5rem"
 }
 
 export default Signup;
