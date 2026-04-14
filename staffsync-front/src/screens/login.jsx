@@ -63,6 +63,9 @@ function Login(params) {
                     <button style={buttonStyle}>
                         Login
                     </button>
+                    <p>
+                        <Link to="/Dashboard">Da</Link>
+                    </p>
                     <p style={{ margin: "20px" }}>
                         Don't have an Account?{" "} 
                         <Link to="/" style={{color:"blue"}}>
