@@ -1,4 +1,4 @@
-import { Box, Card, Drawer, Grid, Typography } from '@mui/material'
+import { Box, Card, Drawer, Grid, Typography, Divider, List, ListItem, ListItemButton, Link } from '@mui/material'
 
 function StatCard({ title, value, color, trend }) {
     return (
@@ -39,6 +39,25 @@ function Dashboard() {
                     height: "97%"
                 },
             }}>
+                <Box sx={{ p: 3, mb: 2, ml: 3.5 }}>
+                    <Typography>
+                        El Matador
+                    </Typography>
+                </Box>
+                <Divider sx={{ ml: 2, mr: 2 }} />
+                <List sx={{ px: 2, flexGrow: 1 }}>
+                    {menuItemClasses.map((item) => {
+                        const active = location.pathname === item.path;
+                        return (
+                            <ListItem key={item.text} disablePadding sx={{ mb: 0.5 }}>
+                                <ListItemButton component={Link} to={item.path} sx={{ borderRadius: '12px', bgcolor: active ? 'blue' : 'transparent', color: active ? 'yellow' : 'transparent', '&:hover': { bgcolor: 'white', color: 'green' }, transition: 'all 0.2s ease' }}>
+                                    <ListItemIcon sx={{ color: 'inherit', minWidth: 40 }}>{item.icon}</ListItemIcon>
+                                    <ListItemText primary={item.text} primaryTypographyProps={{ fontWeight: active ? 800 : 500, fontSize: '0.9rem' }} />
+                                </ListItemButton>
+                            </ListItem>
+                        )
+                    })}
+                </List>
             </Drawer>
             <Box sx={{ ml: "170px", p: 3, marginTop: '60px' }}>
                 <Grid container spacing={16}>
@@ -60,17 +79,17 @@ function Dashboard() {
                     </Grid>
                 </Grid>
                 <Grid container spacing={2} >
-                    <Grid item xs = {6}sx={{width:'50%'}}>
-                        <Card style={{ backgroundColor: 'blue' ,marginLeft:'10px',padding:'10px',height:270,borderRadius:'10px'}} >
+                    <Grid item xs={8} sx={{ width: '50%' }}>
+                        <Card style={{ backgroundColor: 'blue', marginLeft: '10px', padding: '10px', height: 270, borderRadius: '10px' }} >
                             Employees
                         </Card>
                     </Grid>
-                    <Grid item xs = {6} >
-                        <Card style={{ backgroundColor: 'yellow' ,marginLeft:'10px',padding:'10px',height:270,borderRadius:'10px'}} >
+                    <Grid item xs={4} sx={{ width: '47%' }} >
+                        <Card style={{ backgroundColor: 'pink', marginLeft: '63px', padding: '10px', height: 270, borderRadius: '10px' }} >
                             att
                         </Card>
                     </Grid>
-                    </Grid>
+                </Grid>
             </Box>
         </>
     )
