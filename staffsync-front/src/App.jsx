@@ -7,6 +7,9 @@ import Navbar from './screens/Navbar';
 import Dashboard from './screens/Dashboard';
 import AuthLayout from './routes/Authlayout';
 import MainLayout from './routes/Mainlayout';
+import Employee from './screens/Employee';
+import Attendance from './screens/Attendance';
+import Doc from './screens/Document';
 
 function App() {
 
@@ -19,6 +22,9 @@ function App() {
         </Route>
         <Route element={<MainLayout/>}>
           <Route path='/Dashboard' element = {<Dashboard/>}/>
+          <Route path='/Employee' element={<Employee/>}/>
+          <Route path='/Attendace' element={<Attendance/>}/>
+          <Route path='/Document' element={<Doc/>}/>
         </Route>
       </Routes>
     </main>
